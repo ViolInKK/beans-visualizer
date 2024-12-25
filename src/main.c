@@ -87,9 +87,9 @@ int main(){
         DrawView(viewContext);
         EndDrawing();
     }
-    CloseWindow();
     UnloadSound(viewContext->sqrWave);
     CloseAudioDevice();
+    CloseWindow();
     free(viewContext);
     return SUCCESS;
 }
