@@ -6,6 +6,8 @@ This little app lets you see visualization of such array sorting algorithms as: 
 
 **This project was made for fun and learning purposes: to get familiar with C, better understanding of data structures, mainly graphs and trees, and little implimentation reference repo if I will ever need to look up any of this stuff.**
 
+<img src="https://github.com/ViolInKK/beans-visualizer/blob/master/preview/sorting.gif"/>
+
 # Building
 ### Requirements
 
