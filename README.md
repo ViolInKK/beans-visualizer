@@ -1,6 +1,12 @@
 # Overview
 
-This project was made for fun and learning purposes: to get familiar with C, better understanding of data structures, mainly graphs and trees, and little implimentation reference repo if I will ever need to look up any of this stuff. 
+Data structure and algorithms visualizer (sorta) in C using raylib.
+
+This little app lets you see visualization of such array sorting algorithms as: Quick sort, Merge sort, Heap sort etc. As well as learn about other data structures like graphs and tress.
+
+**This project was made for fun and learning purposes: to get familiar with C, better understanding of data structures, mainly graphs and trees, and little implimentation reference repo if I will ever need to look up any of this stuff.**
+
+<img src="https://github.com/ViolInKK/beans-visualizer/blob/master/preview/sorting.gif"/>
 
 # Building
 ### Requirements
