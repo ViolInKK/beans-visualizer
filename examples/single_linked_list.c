@@ -53,11 +53,12 @@ void InsertNode(Node **p_headNode, int value, int position){
         if(counter + 1 == position){
             newNode->p_nextNode = currentNode->p_nextNode;
             currentNode->p_nextNode = newNode;
-            break;
+            return;
         }
             counter++;
             currentNode = currentNode->p_nextNode;
     }
+    printf("Tried to insert outside of linked list boundaries.\n");
 }
 void RemoveNode(Node **p_headNode, int value){
     if(*p_headNode == NULL){
