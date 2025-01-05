@@ -15,8 +15,6 @@
 #define ARRAY_SORT_LIST_BTNS_AMNT 9
 #define ARRAY_SORTING_BTNS_AMNT 2
 
-#define CONVERSION_ENTRY_AMNT 28 
-
 typedef enum{
     TITLE,
     MAIN_MENU,
@@ -46,6 +44,7 @@ typedef enum{
     LINKED_LIST,
     TREES,
     GRAPHS,
+    VIEW_COUNT,
 } View;
 
 typedef struct{
@@ -63,27 +62,33 @@ typedef struct ViewContext{
     View viewStack[VIEWSTACK_SIZE];
     size_t viewStackPointer;
 
-    //Text to display with DrawTextBox()
     const char *textBoxContent;
 
     //Array sorting sound
     Sound sqrWave;
 
-    //Data structures examples
+    //Data structure examples
     int array[100];
     int arraySize;
     size_t arrayPointer;
 } ViewContext;
 
-//Text for buttons
+// ---- Text for buttons at specific views ----
+
+//Button titles at main menu view
 extern const char *MAIN_BTNS[MAIN_BTNS_AMNT];
+//Button titles at array view
 extern const char *ARRAY_BTNS[ARRAY_BTNS_AMNT];
+//Button titles at view with all array sorting algorithms
 extern const char *ARRAY_SORT_LIST_BTNS[ARRAY_SORT_LIST_BTNS_AMNT];
+//Button titles at array sorting view 
 extern const char *ARRAY_SORTING_BTNS[ARRAY_SORTING_BTNS_AMNT];
 
-//Used when convert button text into view enum
-extern const Converter conversion[CONVERSION_ENTRY_AMNT];
+//NOTE(ViolinKK): When button is pressed we lookup to what view switch to based on button text. 
+//                This conversion table converts view title(string) to view enum type.
+extern const Converter conversion[VIEW_COUNT];
 
+// ---- Rendering functions ----
 
 void DrawReturnButton(ViewContext *viewContext);
 void DrawCloseButton(bool *mainLoopCon);
@@ -92,14 +97,16 @@ void DrawArraySortingButtons(ViewContext *viewContext, void (*sortFuncPtr)(ViewC
 
 void DrawViewTitle(const char* viewTitle);
 
-void DrawTextBox(ViewContext *viewContext);
+//TODO(ViolinKK): Add scroll functionality and scroll bar.
+void DrawTextBox(ViewContext *viewContext); //Used for rendering long text with word wrapping and scroll.
 
 void DrawView(ViewContext *viewContext);
 
-const char *ViewStrConvert(View view);
-void SwitchViewTo(ViewContext *viewContext, const char* newView);
+const char *ViewStrConvert(View view); //Used to convert current view from viewstack(or any view) into its string to render view title.
+void SwitchViewTo(ViewContext *viewContext, const char* newView); //Called when navigation button is pressed and takes that button title as argument.
 
 void DrawArray(ViewContext *viewContext, int size);
 void VisualizeArraySorting(ViewContext *viewContext);
+//TODO(ViolinKK): Mark correctly placed elements in array with green color.
 void VerifyArrayAfterSort(ViewContext *viewContext);
 #endif

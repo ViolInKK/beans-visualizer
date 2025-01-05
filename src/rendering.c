@@ -41,7 +41,7 @@ const char *ARRAY_SORTING_BTNS[ARRAY_SORTING_BTNS_AMNT] = {
     "SHUFFLE ARRAY",
 };
 
-const Converter conversion[CONVERSION_ENTRY_AMNT] = {
+const Converter conversion[VIEW_COUNT] = {
     {TITLE, "TITLE"},
     {MAIN_MENU, "MAIN MENU"},
     {ARRAY, "ARRAY"},
@@ -111,7 +111,7 @@ void DrawCloseButton(bool *mainLoopCon){
 }
 
 const char *ViewStrConvert(View view){
-    for (size_t i = 0; i < CONVERSION_ENTRY_AMNT; i++){
+    for (size_t i = 0; i < VIEW_COUNT; i++){
         if (view == conversion[i].view){
             return conversion[i].str_view;
         }
@@ -120,7 +120,7 @@ const char *ViewStrConvert(View view){
 }
 
 void SwitchViewTo(ViewContext *viewContext, const char* newView){
-    for (size_t i = 0; i < CONVERSION_ENTRY_AMNT; i++){
+    for (size_t i = 0; i < VIEW_COUNT; i++){
         if (!strcmp(newView, conversion[i].str_view)){
             viewContext->viewStackPointer++;
             if (viewContext->viewStackPointer > VIEWSTACK_SIZE){

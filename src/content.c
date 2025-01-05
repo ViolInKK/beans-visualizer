@@ -26,6 +26,6 @@ const char *QUEUE_OVERVIEW_CONTENT = "In computer science, a queue is an abstrac
 
 const char *LINKED_LIST_OVERVIEW_CONTENT = "In computer science, a linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next. It's a data structure consisting of collection of nodes which together represent a sequence. In it's most basic form, each node contains data, and a reference to next node.";
 
-const char *TREES_OVERVIEW_CONTENT = "TREES";
+const char *TREES_OVERVIEW_CONTENT = "In computer science, a tree is a widely used abstract data type that represents a hierarchical tree structure with a set of connected nodes. Each node in the tree can be connected to many children(depending on the type of tree), but must be connected to exactly on parent, except for the root node, which has no parent.";
 
-const char *GRAPHS_OVERVIEW_CONTENT = "GRAPHS";
+const char *GRAPHS_OVERVIEW_CONTENT = "In computer science, a graph is an abstract data type that is meant to implement the undirected graph and directed graph concepts. A graph data structure consist of finite(and possible mutable) set of verticies(also called nodes or points), together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph. These pairs are knows as edges(also called links).";

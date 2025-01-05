@@ -1,6 +1,8 @@
 #ifndef CONTENT_H 
 #define CONTENT_H 
 
+// ---- Strings to render in text boxes ----
+
 extern const char *ARRAY_OVERVIEW_CONTENT;
 extern const char *BUBBLESORT_OVERVIEW_CONTENT;
 extern const char *SHAKERSORT_OVERVIEW_CONTENT;
