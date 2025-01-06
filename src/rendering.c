@@ -222,7 +222,7 @@ void DrawNavigationButtons(ViewContext *viewContext, Vector2 pos){
     }
 }
 
-void DrawArraySortingButtons(ViewContext *viewContext, void (*sortFuncPtr)(ViewContext*)){
+void DrawArraySortingButtons(ViewContext *viewContext, void (*p_sortingFunc)(ViewContext*)){
     int screenWidth = GetScreenWidth();
     int screenHeight = GetScreenHeight();
     float buttonWidth = screenWidth * 0.30, 
@@ -264,7 +264,7 @@ void DrawArraySortingButtons(ViewContext *viewContext, void (*sortFuncPtr)(ViewC
     DrawText(sortArrayTitle, sortArray.width/2 + sortArray.x - sortArrayTitleSize/2, sortArray.y+10, fontSize, isSortArrayHover ? BLUE : DARKGRAY);
     if (isSortArrayHover && IsMouseButtonReleased(MOUSE_BUTTON_LEFT)){
         EndDrawing();
-        (*sortFuncPtr)(viewContext);
+        (*p_sortingFunc)(viewContext);
         VerifyArrayAfterSort(viewContext);
         StopSound(viewContext->sqrWave);
     }
@@ -409,7 +409,7 @@ void DrawView(ViewContext *viewContext){
     DrawNavigationButtons(viewContext, (Vector2){0.0, 0.0});
     DrawReturnButton(viewContext);
 
-    void (*sortFuncPtr)(ViewContext*);
+    void (*p_sortingFunc)(ViewContext*);
 
     switch (view){
         case TITLE:
@@ -436,39 +436,39 @@ void DrawView(ViewContext *viewContext){
             break;
         case ARRAY_SORTING_BUBBLE:
             viewContext->textBoxContent = BUBBLESORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &BubbleSort;
+            p_sortingFunc = &BubbleSort;
             break;
         case ARRAY_SORTING_SHAKER:
             viewContext->textBoxContent = SHAKERSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &ShakerSort;
+            p_sortingFunc = &ShakerSort;
             break;
         case ARRAY_SORTING_SELECTION:
             viewContext->textBoxContent = SELECTIONSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &SelectionSort;
+            p_sortingFunc = &SelectionSort;
             break;
         case ARRAY_SORTING_INSERTION:
             viewContext->textBoxContent = INSERTIONSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &InsertionSort;
+            p_sortingFunc = &InsertionSort;
             break;
         case ARRAY_SORTING_QUICK:
             viewContext->textBoxContent = QUICKSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &QuickSortInterface;
+            p_sortingFunc = &QuickSortInterface;
             break;
         case ARRAY_SORTING_MERGE:
             viewContext->textBoxContent = MERGESORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &MergeSortInterface;
+            p_sortingFunc = &MergeSortInterface;
             break;
         case ARRAY_SORTING_HEAP:
             viewContext->textBoxContent = HEAPSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &HeapSort;
+            p_sortingFunc = &HeapSort;
             break;
         case ARRAY_SORTING_SHELL:
             viewContext->textBoxContent = SHELLSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &ShellSort;
+            p_sortingFunc = &ShellSort;
             break;
         case ARRAY_SORTING_COMB:
             viewContext->textBoxContent = COMBSORT_OVERVIEW_CONTENT;
-            sortFuncPtr = &CombSort;
+            p_sortingFunc = &CombSort;
             break;
         case STACK:
             viewContext->textBoxContent = STACK_OVERVIEW_CONTENT;
@@ -498,7 +498,7 @@ void DrawView(ViewContext *viewContext){
     //If view is one of array sorting examples.
     if (view > 4 && view <= 13){
         DrawArray(viewContext, viewContext->arraySize);
-        DrawArraySortingButtons(viewContext, sortFuncPtr);
+        DrawArraySortingButtons(viewContext, p_sortingFunc);
     }
     //If view is one of array sorting overviews.
     if (view > 13 && view <= 24){

@@ -93,7 +93,7 @@ extern const Converter conversion[VIEW_COUNT];
 void DrawReturnButton(ViewContext *viewContext);
 void DrawCloseButton(bool *mainLoopCon);
 void DrawNavigationButtons(ViewContext *viewContext, Vector2 pos);
-void DrawArraySortingButtons(ViewContext *viewContext, void (*sortFuncPtr)(ViewContext*));
+void DrawArraySortingButtons(ViewContext *viewContext, void (*p_sortingFunc)(ViewContext*));
 
 void DrawViewTitle(const char* viewTitle);
 

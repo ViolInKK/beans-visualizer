@@ -28,4 +28,6 @@ $ make && ./out/DSAV.out
 
 * [This awesome YouTube video](https://www.youtube.com/watch?v=h1Bi0granxM&ab_channel=KuvinaSaydaki)
 
+* [Opendsa chapters 18 and 27.9](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/index.html)
+
 * And planty of corresponding wikipedia pages
