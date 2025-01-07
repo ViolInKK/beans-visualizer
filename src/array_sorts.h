@@ -10,6 +10,10 @@ void InsertionSort(ViewContext *viewContext);
 void ShellSort(ViewContext *viewContext);
 void CombSort(ViewContext *viewContext);
 
+// NOTE(ViolinKK): 
+//      We need interfaces for quick and merge sorts to being 
+//      able to point to them since implementation is recursive and requires more than one paramter
+//      when function pointer definition only requires viewcontext.
 void QuickSortInterface(ViewContext *viewContext);
 int  partition(ViewContext *viewContext, int low, int high);
 void QuickSort(ViewContext *viewContext, int low, int high);

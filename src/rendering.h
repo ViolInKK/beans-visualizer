@@ -84,8 +84,9 @@ extern const char *ARRAY_SORT_LIST_BTNS[ARRAY_SORT_LIST_BTNS_AMNT];
 //Button titles at array sorting view 
 extern const char *ARRAY_SORTING_BTNS[ARRAY_SORTING_BTNS_AMNT];
 
-//NOTE(ViolinKK): When button is pressed we lookup to what view switch to based on button text. 
-//                This conversion table converts view title(string) to view enum type.
+//NOTE(ViolinKK): 
+//      When button is pressed we lookup to what view switch to based on button text. 
+//      This conversion table converts view title(string) to view enum type.
 extern const Converter conversion[VIEW_COUNT];
 
 // ---- Rendering functions ----
@@ -97,7 +98,8 @@ void DrawArraySortingButtons(ViewContext *viewContext, void (*p_sortingFunc)(Vie
 
 void DrawViewTitle(const char* viewTitle);
 
-//TODO(ViolinKK): Add scroll functionality and scroll bar.
+//TODO(ViolinKK): 
+//      Add scroll functionality and scroll bar.
 void DrawTextBox(ViewContext *viewContext); //Used for rendering long text with word wrapping and scroll.
 
 void DrawView(ViewContext *viewContext);
@@ -107,6 +109,7 @@ void SwitchViewTo(ViewContext *viewContext, const char* newView); //Called when 
 
 void DrawArray(ViewContext *viewContext, int size);
 void VisualizeArraySorting(ViewContext *viewContext);
-//TODO(ViolinKK): Mark correctly placed elements in array with green color.
+//TODO(ViolinKK): 
+//      Mark correctly placed elements in array with green color.
 void VerifyArrayAfterSort(ViewContext *viewContext);
 #endif

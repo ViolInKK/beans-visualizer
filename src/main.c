@@ -34,7 +34,8 @@ int InitRaylib() {
         CloseWindow();
         exit(AUDIO_INIT_FAIL);
     }
-    //NOTE(ViolinKK): We do this to make use of relatives paths easier when loading files.
+    //NOTE(ViolinKK): 
+    //      We do this to make use of relatives paths easier when loading files.
     ChangeDirectory(GetApplicationDirectory());
 
     SetMasterVolume(0.03);
