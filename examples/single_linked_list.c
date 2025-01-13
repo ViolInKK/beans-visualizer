@@ -1,6 +1,18 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+//NOTE(ViolinKK):
+//  This is a more common and convenient pattern of defining linked list.    
+
+/*
+ * typedef struct s_node *t_node;
+ * 
+ * struct s_node {
+ *     int data;
+ *     t_node p_nextNode;
+ * }
+*/
+
 typedef struct {
     int data;
     void *p_nextNode;

@@ -45,8 +45,7 @@ int InitRaylib() {
 
 ViewContext *InitViewContext(){
     //Allocate memory
-    ViewContext *viewContext;
-    viewContext = malloc(sizeof(*viewContext));
+    ViewContext *viewContext = malloc(sizeof(*viewContext));
     if (viewContext == NULL){
         fprintf(stderr, "ERROR: Couldn't allocate viewcontext memory.\n");
         CloseWindow();
